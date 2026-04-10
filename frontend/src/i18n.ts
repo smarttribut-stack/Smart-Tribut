@@ -1,0 +1,43 @@
+export type Lang = 'es' | 'en' | 'fr';
+
+export const translations = {
+  es: {
+    navNewSession: '+ Nueva sesión',
+    welcomeSubtitle: 'Tu asistente de inteligencia artificial para consultas tributarias',
+    card1: 'Consultas sobre IVA, IRPF y otros impuestos',
+    card2: 'Referencias a legislación vigente',
+    card3: 'Respuestas claras y en español',
+    disclaimer: '⚠️ Las respuestas son orientativas y no sustituyen el asesoramiento profesional.',
+    placeholder: 'Escribe tu consulta tributaria...',
+    footerNote: 'Smart Tribut · Asistencia tributaria con IA',
+    confirmNewSession: '¿Iniciar una nueva sesión? Se borrará el historial actual.',
+    typing: 'Escribiendo...',
+    botResponse: 'Gracias por tu consulta. Estoy procesando tu pregunta sobre tributación. Pronto tendrás una respuesta detallada con referencias legales.',
+  },
+  en: {
+    navNewSession: '+ New session',
+    welcomeSubtitle: 'Your AI assistant for tax and tributary queries',
+    card1: 'Questions about VAT, income tax and more',
+    card2: 'References to current legislation',
+    card3: 'Clear answers in English',
+    disclaimer: '⚠️ Answers are informational and do not replace professional advice.',
+    placeholder: 'Type your tax question...',
+    footerNote: 'Smart Tribut · AI-powered tax assistance',
+    confirmNewSession: 'Start a new session? Current history will be cleared.',
+    typing: 'Typing...',
+    botResponse: 'Thank you for your query. I am processing your tax question. You will soon receive a detailed answer with legal references.',
+  },
+  fr: {
+    navNewSession: '+ Nouvelle session',
+    welcomeSubtitle: 'Votre assistant IA pour les questions fiscales et tributaires',
+    card1: 'Questions sur la TVA, l\'impôt sur le revenu et plus',
+    card2: 'Références à la législation en vigueur',
+    card3: 'Réponses claires en français',
+    disclaimer: '⚠️ Les réponses sont indicatives et ne remplacent pas un conseil professionnel.',
+    placeholder: 'Écrivez votre question fiscale...',
+    footerNote: 'Smart Tribut · Assistance fiscale par IA',
+    confirmNewSession: 'Démarrer une nouvelle session ? L\'historique actuel sera effacé.',
+    typing: 'En train d\'écrire...',
+    botResponse: 'Merci pour votre question. Je traite votre demande fiscale. Vous recevrez bientôt une réponse détaillée avec des références légales.',
+  },
+};
