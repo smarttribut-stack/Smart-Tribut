@@ -351,3 +351,37 @@
 .cell-input{width:100%;min-width:100px;background:transparent;border:none;padding:.5rem .6rem;color:#e2e8f0;font-size:.875rem;outline:none;}
 .cell-input:focus{background:rgba(139,92,246,.08);}
 .table-note{font-size:.75rem;color:#475569;text-align:center;}
+
+/* 4 PLANS GRID */
+.pricing-grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.plan-badge-business { background: linear-gradient(135deg, #059669, #047857); }
+.plan-badge-enterprise { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.pricing-card-enterprise { border-color: #f59e0b; background: linear-gradient(135deg, #1f1500, #2d1f00); box-shadow: 0 0 40px rgba(245,158,11,.15); }
+.check-business { color: #10b981; }
+.check-enterprise { color: #f59e0b; }
+.btn-plan-business { background: linear-gradient(135deg, #059669, #047857); }
+.btn-plan-enterprise { background: linear-gradient(135deg, #f59e0b, #d97706); }
+/* PAYWALL WIDE */
+.paywall-modal-wide { max-width: 860px; width: 95vw; }
+.paywall-plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.paywall-plan-card { background: #0a0f1e; border: 1px solid #1f2937; border-radius: 14px; padding: 1.25rem; display: flex; flex-direction: column; gap: .75rem; }
+.paywall-plan-featured { border-color: #3b82f6; background: linear-gradient(135deg, #0f1f3d, #1a0f3d); }
+.paywall-more { font-size: .78rem; color: #475569; font-style: italic; }
+.btn-enterprise { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.badge-enterprise { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+.pricing-grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.plan-badge-business{background:linear-gradient(135deg,#059669,#047857);}
+.plan-badge-enterprise{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.pricing-card-enterprise{border-color:#f59e0b;background:linear-gradient(135deg,#1f1500,#2d1f00);box-shadow:0 0 40px rgba(245,158,11,.15);}
+.check-business{color:#10b981;}
+.check-enterprise{color:#f59e0b;}
+.btn-plan-business{background:linear-gradient(135deg,#059669,#047857);}
+.btn-plan-enterprise{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.paywall-modal-wide{max-width:860px;width:95vw;}
+.paywall-plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0;}
+.paywall-plan-card{background:#0a0f1e;border:1px solid #1f2937;border-radius:14px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;}
+.paywall-plan-featured{border-color:#3b82f6;background:linear-gradient(135deg,#0f1f3d,#1a0f3d);}
+.paywall-more{font-size:.78rem;color:#475569;font-style:italic;}
+.btn-enterprise{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.badge-enterprise{background:linear-gradient(135deg,#f59e0b,#d97706);}

@@ -23,6 +23,7 @@ interface User {
   email: string;
   freeQueriesLeft: number;
   isPro?: boolean;
+  plan?: 'free' | 'pro' | 'business' | 'enterprise';
 }
 
 const flags: Record<Lang, string> = { es: '🇪🇸', en: '🇺🇸', fr: '🇫🇷' };
@@ -142,7 +143,7 @@ function App() {
       const res = await fetch('/api/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: currentInput, history }),
+        body: JSON.stringify({ query: currentInput, history, plan: user?.plan || 'free' }),
       });
 
       const data = await res.json();
@@ -180,7 +181,7 @@ function App() {
     addToast('Sesión cerrada', 'info');
   };
 
-  const handleSubscribe = () => {
+  const handleSubscribe = (plan: 'pro' | 'business' | 'enterprise') => {
     // Stripe integration goes here
     addToast('Redirigiendo a Stripe...', 'info');
     setShowPaywall(false);

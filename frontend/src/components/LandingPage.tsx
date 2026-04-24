@@ -72,13 +72,13 @@ export function LandingPage({ lang, onStartChat, onLogin, onRegister, setLang }:
       <section className="pricing" id="pricing">
         <h2 className="section-title">{t.pricingTitle}</h2>
         <p className="section-subtitle">{t.pricingSubtitle}</p>
-        <div className="pricing-grid">
+        <div className="pricing-grid pricing-grid-4">
           {/* Free */}
           <div className="pricing-card">
             <div className="pricing-header">
               <h3 className="plan-name">{t.planFreeName}</h3>
               <div className="plan-price">
-                <span className="price-amount">€0</span>
+                <span className="price-amount">RD$0</span>
                 <span className="price-period">{t.planFreePrice}</span>
               </div>
             </div>
@@ -96,7 +96,7 @@ export function LandingPage({ lang, onStartChat, onLogin, onRegister, setLang }:
             <div className="pricing-header">
               <h3 className="plan-name">{t.planProName}</h3>
               <div className="plan-price">
-                <span className="price-amount">€9.99</span>
+                <span className="price-amount">RD$199</span>
                 <span className="price-period">{t.planProPrice}</span>
               </div>
             </div>
@@ -106,6 +106,42 @@ export function LandingPage({ lang, onStartChat, onLogin, onRegister, setLang }:
               ))}
             </ul>
             <button className="btn-plan-primary" onClick={onRegister}>{t.planProCta}</button>
+          </div>
+
+          {/* Negocios */}
+          <div className="pricing-card">
+            <div className="plan-badge plan-badge-business">{t.planBusinessBadge}</div>
+            <div className="pricing-header">
+              <h3 className="plan-name">{t.planBusinessName}</h3>
+              <div className="plan-price">
+                <span className="price-amount">RD$349</span>
+                <span className="price-period">{t.planBusinessPrice}</span>
+              </div>
+            </div>
+            <ul className="plan-features">
+              {(t.planBusinessFeatures as string[]).map((f, i) => (
+                <li key={i}><span className="check check-business">✓</span>{f}</li>
+              ))}
+            </ul>
+            <button className="btn-plan-primary btn-plan-business" onClick={onRegister}>{t.planBusinessCta}</button>
+          </div>
+
+          {/* Empresarial */}
+          <div className="pricing-card pricing-card-enterprise">
+            <div className="plan-badge plan-badge-enterprise">{t.planEnterpriseBadge}</div>
+            <div className="pricing-header">
+              <h3 className="plan-name">{t.planEnterpriseName}</h3>
+              <div className="plan-price">
+                <span className="price-amount">RD$499</span>
+                <span className="price-period">{t.planEnterprisePrice}</span>
+              </div>
+            </div>
+            <ul className="plan-features">
+              {(t.planEnterpriseFeatures as string[]).map((f, i) => (
+                <li key={i}><span className="check check-enterprise">✓</span>{f}</li>
+              ))}
+            </ul>
+            <button className="btn-plan-primary btn-plan-enterprise" onClick={onRegister}>{t.planEnterpriseCta}</button>
           </div>
         </div>
       </section>

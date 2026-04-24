@@ -24,14 +24,14 @@ app.get('/health', (_req, res) => {
 
 // AI query endpoint
 app.post('/api/query', async (req, res) => {
-  const { query, history = [] } = req.body;
+  const { query, history = [], plan = 'free' } = req.body;
 
   if (!query || !query.trim()) {
     return res.status(400).json({ error: 'La consulta no puede estar vacía.' });
   }
 
   try {
-    const response = await askAI(query, history);
+    const response = await askAI(query, history, plan);
     res.json({ success: true, response });
   } catch (error: any) {
     console.error('AI Error:', error.message, error.status, error.code);
