@@ -395,3 +395,20 @@
 .install-text span{font-size:.78rem;color:#64748b;}
 .btn-install{background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:none;border-radius:8px;padding:.4rem .9rem;color:white;font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap;}
 .btn-install-close{background:none;border:none;color:#64748b;cursor:pointer;font-size:1rem;padding:.25rem;}
+
+/* INSTALL MODAL */
+.install-modal{max-width:400px;}
+.install-modal-icon{text-align:center;font-size:3rem;margin-bottom:1rem;}
+.install-steps{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0;}
+.install-step{display:flex;align-items:flex-start;gap:.75rem;background:#0a0f1e;border:1px solid #1f2937;border-radius:10px;padding:.75rem 1rem;}
+.step-num{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:white;font-size:.8rem;font-weight:700;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.install-step p{font-size:.9rem;color:#94a3b8;line-height:1.5;}
+.install-step strong{color:#e2e8f0;}
+.btn-install-direct{width:100%;padding:.85rem;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:none;border-radius:12px;color:white;font-size:1rem;font-weight:700;cursor:pointer;}
+.install-link-box{background:#0a0f1e;border:1px solid #1f2937;border-radius:10px;padding:.75rem 1rem;display:flex;flex-direction:column;gap:.25rem;margin-top:.5rem;}
+.install-link-label{font-size:.75rem;color:#475569;}
+.install-link{font-size:.85rem;color:#3b82f6;text-decoration:none;word-break:break-all;}
+.install-link:hover{text-decoration:underline;}
+/* INSTALL HERO BTN */
+.btn-hero-install{background:none;border:1px solid #334155;color:#94a3b8;padding:.8rem 1.5rem;border-radius:12px;cursor:pointer;font-size:.95rem;transition:all .2s;}
+.btn-hero-install:hover{border-color:#3b82f6;color:#3b82f6;}

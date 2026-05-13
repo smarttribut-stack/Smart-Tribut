@@ -1,5 +1,6 @@
-import React from 'react';
+import { useState } from 'react';
 import { type Lang, translations } from '../i18n';
+import { InstallModal } from './InstallModal';
 
 interface LandingPageProps {
   lang: Lang;
@@ -13,6 +14,7 @@ const flags: Record<Lang, string> = { es: '🇪🇸', en: '🇺🇸', fr: '🇫�
 
 export function LandingPage({ lang, onStartChat, onLogin, onRegister, setLang }: LandingPageProps) {
   const t = translations[lang];
+  const [showInstall, setShowInstall] = useState(false);
 
   return (
     <div className="landing">
@@ -43,6 +45,7 @@ export function LandingPage({ lang, onStartChat, onLogin, onRegister, setLang }:
         <div className="hero-actions">
           <button className="btn-hero-primary" onClick={onRegister}>{t.heroCtaPrimary}</button>
           <button className="btn-hero-secondary" onClick={onStartChat}>{t.heroCtaSecondary}</button>
+          <button className="btn-hero-install" onClick={() => setShowInstall(true)}>📱 Instalar app</button>
         </div>
         <p className="hero-free-note">{t.heroFreeNote}</p>
       </section>
@@ -150,6 +153,8 @@ export function LandingPage({ lang, onStartChat, onLogin, onRegister, setLang }:
       <footer className="landing-footer">
         <p>© 2025 Smart Tribut · {t.footerNote}</p>
       </footer>
+
+      {showInstall && <InstallModal onClose={() => setShowInstall(false)} />}
     </div>
   );
 }

@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-
+import { useState, useRef } from 'react';
 interface VoiceButtonProps {
   isPro: boolean;
   onTranscript: (text: string) => void;

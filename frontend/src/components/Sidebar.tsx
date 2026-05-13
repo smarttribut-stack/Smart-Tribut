@@ -1,4 +1,3 @@
-import React from 'react';
 import { type Lang, translations } from '../i18n';
 
 export interface ChatSession {

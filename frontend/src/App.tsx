@@ -182,7 +182,7 @@ function App() {
     addToast('Sesión cerrada', 'info');
   };
 
-  const handleSubscribe = (plan: 'pro' | 'business' | 'enterprise') => {
+  const handleSubscribe = (_plan: 'pro' | 'business' | 'enterprise') => {
     // Stripe integration goes here
     addToast('Redirigiendo a Stripe...', 'info');
     setShowPaywall(false);
