@@ -8,6 +8,7 @@ import { PaywallModal } from './components/PaywallModal';
 import { Toast, type ToastMessage } from './components/Toast';
 import { VoiceButton } from './components/VoiceButton';
 import { DataTable } from './components/DataTable';
+import { InstallBanner } from './components/InstallBanner';
 
 type View = 'landing' | 'chat';
 
@@ -359,6 +360,7 @@ function App() {
         <PaywallModal lang={lang} onClose={() => setShowPaywall(false)} onSubscribe={handleSubscribe} />
       )}
       <Toast toasts={toasts} onRemove={removeToast} />
+      <InstallBanner />
     </div>
   );
 }
