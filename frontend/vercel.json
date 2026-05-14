@@ -2,6 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
+  "framework": "vite",
   "rewrites": [
     { "source": "/api/stripe/(.*)", "destination": "https://smart-tribut-backend.onrender.com/api/stripe/$1" },
     { "source": "/api/(.*)", "destination": "https://smart-tribut-backend.onrender.com/api/$1" },
