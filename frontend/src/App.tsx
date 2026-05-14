@@ -32,6 +32,22 @@ const flags: Record<Lang, string> = { es: '🇪🇸', en: '🇺🇸', fr: '🇫�
 function App() {
   const [view, setView] = useState<View>('landing');
   const [lang, setLang] = useState<Lang>('es');
+
+  // Handle Stripe payment return
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const payment = params.get('payment');
+    const plan = params.get('plan') as 'pro' | 'business' | 'enterprise' | null;
+    if (payment === 'success' && plan) {
+      setUser(prev => prev ? { ...prev, isPro: true, plan } : prev);
+      addToast('¡Suscripción activada! Bienvenido al plan ' + plan, 'success');
+      window.history.replaceState({}, '', '/');
+      setView('chat');
+    } else if (payment === 'cancelled') {
+      addToast('Pago cancelado.', 'info');
+      window.history.replaceState({}, '', '/');
+    }
+  }, []);
   const [user, setUser] = useState<User | null>(null);
   const [authMode, setAuthMode] = useState<'login' | 'register' | null>(null);
   const [showPaywall, setShowPaywall] = useState(false);
@@ -182,9 +198,23 @@ function App() {
     addToast('Sesión cerrada', 'info');
   };
 
-  const handleSubscribe = (_plan: 'pro' | 'business' | 'enterprise') => {
-    // Stripe integration goes here
-    addToast('Redirigiendo a Stripe...', 'info');
+  const handleSubscribe = async (_plan: 'pro' | 'business' | 'enterprise') => {
+    try {
+      addToast('Redirigiendo a Stripe...', 'info');
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan: _plan, email: user?.email }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        addToast('Error al iniciar el pago. Intenta de nuevo.', 'error');
+      }
+    } catch {
+      addToast('Error de conexión con Stripe.', 'error');
+    }
     setShowPaywall(false);
   };
 

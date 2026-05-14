@@ -3,6 +3,7 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "rewrites": [
+    { "source": "/api/stripe/(.*)", "destination": "https://smart-tribut-backend.onrender.com/api/stripe/$1" },
     { "source": "/api/(.*)", "destination": "https://smart-tribut-backend.onrender.com/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]

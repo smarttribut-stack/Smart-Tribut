@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Next Level Attention</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="logo.png" alt="Next Level Attention" class="nav-logo" onerror="this.style.display='none'" />
+      <span class="nav-title">24/7 Next Level Attention</span>
+    </div>
+    <div class="nav-links">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#negocios">Negocios</a>
+      <a href="#demo">Demo</a>
+      <a href="#dashboard" class="btn-nav">Iniciar sesión</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">∞ Atención digital automatizada 24/7</div>
+    <h1 class="hero-title">Atiende a tus clientes<br><span class="gradient-text">24 horas al día</span></h1>
+    <p class="hero-subtitle">Automatiza la atención de tu negocio. Responde pedidos, envía menús y organiza clientes sin esfuerzo.</p>
+    <div class="hero-actions">
+      <a href="#demo" class="btn-primary">Ver demo en vivo</a>
+      <a href="#dashboard" class="btn-secondary">Registrar mi negocio</a>
+    </div>
+    <p class="hero-note">✓ Gratis para empezar · Sin tarjeta de crédito</p>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Atención continua</span></div>
+    <div class="stat"><span class="stat-num">+50%</span><span class="stat-label">Más ventas</span></div>
+    <div class="stat"><span class="stat-num">0s</span><span class="stat-label">Tiempo de espera</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Automatizado</span></div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section" id="como-funciona">
+    <h2 class="section-title">¿Cómo funciona?</h2>
+    <p class="section-subtitle">En 3 simples pasos tu negocio está listo</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Registra tu negocio</h3>
+        <p>Crea tu cuenta, agrega tu menú, precios y horarios en minutos.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Comparte tu link</h3>
+        <p>Tus clientes entran al link y el bot los atiende automáticamente.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Gestiona todo</h3>
+        <p>Ve todos tus pedidos y clientes en tu panel de control.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOS DE NEGOCIO -->
+  <section class="section section-dark" id="negocios">
+    <h2 class="section-title">Para todo tipo de negocio</h2>
+    <p class="section-subtitle">Selecciona tu tipo de negocio y ve cómo funciona</p>
+    <div class="business-grid">
+      <button class="business-card active" onclick="selectBusiness('colmado')">
+        <span class="business-icon">🏪</span>
+        <span>Colmado</span>
+      </button>
+      <button class="business-card" onclick="selectBusiness('cafeteria')">
+        <span class="business-icon">☕</span>
+        <span>Cafetería</span>
+      </button>
+      <button class="business-card" onclick="selectBusiness('tienda')">
+        <span class="business-icon">👗</span>
+        <span>Tienda de ropa</span>
+      </button>
+      <button class="business-card" onclick="selectBusiness('farmacia')">
+        <span class="business-icon">💊</span>
+        <span>Farmacia</span>
+      </button>
+      <button class="business-card" onclick="selectBusiness('restaurante')">
+        <span class="business-icon">🍽️</span>
+        <span>Restaurante</span>
+      </button>
+      <button class="business-card" onclick="selectBusiness('salon')">
+        <span class="business-icon">💇</span>
+        <span>Salón de belleza</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- DEMO CHAT -->
+  <section class="section" id="demo">
+    <h2 class="section-title">Demo en vivo</h2>
+    <p class="section-subtitle">Así atiende el bot a tus clientes — pruébalo ahora</p>
+    <div class="demo-container">
+      <div class="demo-header">
+        <span class="demo-dot green"></span>
+        <span class="demo-business-name" id="demo-business-name">🏪 Colmado Don Pedro</span>
+        <span class="demo-status">En línea</span>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="msg bot">
+          <div class="msg-bubble">¡Hola! 👋 Bienvenido a <strong id="welcome-name">Colmado Don Pedro</strong>. ¿En qué te puedo ayudar?<br><br>
+          1️⃣ Ver menú y precios<br>
+          2️⃣ Hacer un pedido<br>
+          3️⃣ Horarios<br>
+          4️⃣ Hablar con el dueño</div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." onkeypress="handleKey(event)" />
+        <button onclick="sendMessage()" class="btn-send-chat">➤</button>
+      </div>
+      <div class="quick-replies">
+        <button onclick="quickReply('1')">Ver menú</button>
+        <button onclick="quickReply('2')">Hacer pedido</button>
+        <button onclick="quickReply('3')">Horarios</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SIMULADO -->
+  <section class="section section-dark" id="dashboard">
+    <h2 class="section-title">Panel de control</h2>
+    <p class="section-subtitle">Así se ve tu dashboard como dueño del negocio</p>
+    <div class="dashboard">
+      <div class="dashboard-sidebar">
+        <div class="dash-brand">⚡ Mi Negocio</div>
+        <nav class="dash-nav">
+          <a class="dash-link active">📊 Resumen</a>
+          <a class="dash-link">📦 Pedidos</a>
+          <a class="dash-link">👥 Clientes</a>
+          <a class="dash-link">🍽️ Menú</a>
+          <a class="dash-link">⚙️ Configuración</a>
+        </nav>
+      </div>
+      <div class="dashboard-main">
+        <div class="dash-stats">
+          <div class="dash-stat-card">
+            <span class="dash-stat-icon">📦</span>
+            <div><span class="dash-stat-num">12</span><span class="dash-stat-label">Pedidos hoy</span></div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-icon">👥</span>
+            <div><span class="dash-stat-num">48</span><span class="dash-stat-label">Clientes</span></div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-icon">💰</span>
+            <div><span class="dash-stat-num">RD$4,850</span><span class="dash-stat-label">Ventas hoy</span></div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="dash-stat-icon">⭐</span>
+            <div><span class="dash-stat-num">4.9</span><span class="dash-stat-label">Calificación</span></div>
+          </div>
+        </div>
+        <div class="dash-orders">
+          <h3>Pedidos recientes</h3>
+          <table class="orders-table">
+            <thead><tr><th>Cliente</th><th>Pedido</th><th>Total</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>María G.</td><td>2x Arroz, 1x Pollo</td><td>RD$350</td><td><span class="badge green">Entregado</span></td></tr>
+              <tr><td>Juan P.</td><td>1x Jugo, 2x Pan</td><td>RD$180</td><td><span class="badge yellow">En proceso</span></td></tr>
+              <tr><td>Ana R.</td><td>3x Refresco, 1x Snack</td><td>RD$220</td><td><span class="badge blue">Nuevo</span></td></tr>
+              <tr><td>Carlos M.</td><td>1x Leche, 2x Huevo</td><td>RD$150</td><td><span class="badge green">Entregado</span></td></tr>
+              <tr><td>Rosa T.</td><td>1x Aceite, 1x Sal</td><td>RD$280</td><td><span class="badge yellow">En proceso</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <span>⚡</span>
+      <span>Next Level Attention</span>
+    </div>
+    <p>Brindar atención digital automatizada para pequeños negocios</p>
+    <p class="footer-copy">© 2025 Next Level Attention · Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
